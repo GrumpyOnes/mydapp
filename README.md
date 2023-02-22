@@ -29,3 +29,21 @@ npm init @eslint/config
 //安装react-router-config https://blog.csdn.net/qq_41732963/article/details/124235655
 yarn add react-router-dom react-router-config
 ```
+
+3.app 项目安装 ethers
+
+```
+yarn add ethers
+启用本地测试链  test账户
+```
+
+4.chain 项目准备 erc20 文件
+
+```
+yarn add @openzeppelin/contracts
+
+yarn hardhat compile //编译
+yarn hardhat run script/deploy.ts --network localhost //发布 获得address  0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+
+```
