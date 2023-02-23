@@ -26,7 +26,7 @@ const routes = [
     component: ChainPage,
     routes: [
       {
-        path: "/chain/etherpage",
+        path: "/chain/erc20",
         component: EtherPage,
       },
     ],

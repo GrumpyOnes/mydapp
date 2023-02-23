@@ -8,19 +8,15 @@ import React, {
 import { ethers, Contract, providers } from "ethers";
 import { Button, Divider } from "antd";
 import { EthersContext } from "./index";
-import ERC20ABI from "./abi/erc20";
 
-export const erc20Address = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 export default function erc20reading() {
-  const { ethersProvider, ethersAccount } = useContext<any>(EthersContext);
+  const { ethersProvider, ethersAccount, erc20, erc20Address } =
+    useContext<any>(EthersContext);
   const [totalSupply, setTotalSupply] = useState<any>();
   const [myCount, setMyCount] = useState<string | undefined>();
 
   const [symbol, setSymbol] = useState<string>("");
-  const erc20: Contract = useMemo(
-    () => new ethers.Contract(erc20Address, ERC20ABI, ethersProvider),
-    [ethersProvider]
-  );
+
   const getMyBalance = useCallback(() => {
     erc20.balanceOf(ethersAccount).then((data: any) => {
       setMyCount(ethers.utils.formatEther(data));
@@ -39,7 +35,24 @@ export default function erc20reading() {
   }, [erc20]);
   useEffect(() => {
     getMyBalance();
-  }, [getMyBalance]);
+    console.log("ethersAccount", ethersAccount);
+    if (!ethersAccount) {
+      return;
+    }
+    const fromMe = erc20.filters.Transfer(ethersAccount, null);
+    erc20.on(fromMe, () => {
+      getMyBalance();
+    });
+    const toMe = erc20.filters.Transfer(null, ethersAccount);
+    erc20.on(toMe, () => {
+      getMyBalance();
+    });
+    // eslint-disable-next-line consistent-return
+    return () => {
+      erc20.removeAllListener(fromMe);
+      erc20.removeAllListener(toMe);
+    };
+  }, [getMyBalance, erc20, ethersAccount]);
 
   return (
     <div>

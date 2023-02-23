@@ -16,7 +16,7 @@ const items: MenuProps["items"] = [
     children: [
       {
         key: "",
-        label: <Link to="/chain/etherpage">PAGE1</Link>,
+        label: <Link to="/chain/erc20">ERC20</Link>,
       },
     ],
   },

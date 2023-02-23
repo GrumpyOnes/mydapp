@@ -43,7 +43,9 @@ yarn add ethers
 yarn add @openzeppelin/contracts
 
 yarn hardhat compile //编译
-yarn hardhat run script/deploy.ts --network localhost //发布 获得address  0x5FbDB2315678afecb367f032d93F642f64180aa3
+yarn hardhat run scripts/deploy_erc20.ts --network localhost //发布 获得address  0x5FbDB2315678afecb367f032d93F642f64180aa3
 
-
+yarn add @ethersproject/abstract-provider
 ```
+
+nonce to high。 重置 metamask
