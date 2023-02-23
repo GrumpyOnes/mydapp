@@ -1,0 +1,25 @@
+st.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.liter {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+.redLiter {
+  color: white;
+  background-color: red;
+}
+.yellowLiter {
+  color: grey;
+  background-color: orange;
+}
+.greenLiter {
+  color: white;
+  background-color: green;
+}
+.greyLiter {
+  color: grey;
+}
