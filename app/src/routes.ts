@@ -4,6 +4,7 @@ const ChainPage = React.lazy(() => import("./pages/chain"));
 const WordlePage = React.lazy(() => import("./pages/wordle"));
 const EtherPage = React.lazy(() => import("./pages/testEther"));
 const GamesPage = React.lazy(() => import("./pages/games"));
+const SudokuPage = React.lazy(() => import("./pages/sudoku"));
 
 const routes = [
   {
@@ -18,6 +19,10 @@ const routes = [
       {
         path: "/game/wordle",
         component: WordlePage,
+      },
+      {
+        path: "/game/sudoku",
+        component: SudokuPage,
       },
     ],
   },

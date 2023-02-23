@@ -49,8 +49,10 @@ export default function erc20reading() {
     });
     // eslint-disable-next-line consistent-return
     return () => {
-      erc20.removeAllListener(fromMe);
-      erc20.removeAllListener(toMe);
+      if (erc20?.removeAllListener) {
+        erc20?.removeAllListener(fromMe);
+        erc20?.removeAllListener(toMe);
+      }
     };
   }, [getMyBalance, erc20, ethersAccount]);
 

@@ -20,7 +20,7 @@ const items: MenuProps["items"] = [
       },
       {
         key: "shudu",
-        label: <Link to="/game/shudu">SHUDU</Link>,
+        label: <Link to="/game/sudoku">SHUDU</Link>,
       },
     ],
   },
