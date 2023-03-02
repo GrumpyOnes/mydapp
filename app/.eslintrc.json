@@ -24,6 +24,7 @@
     "import/extensions": 0,
     "react/function-component-definition": 0,
     "no-underscore-dangle": 0,
-    "spaced-comment": 0
+    "spaced-comment": 0,
+    "no-plusplus": 0
   }
 }

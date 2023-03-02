@@ -84,7 +84,7 @@ export default function minInteger() {
           <div className="code">
             <pre>
               <code className="prism-code-fix prism-code language-javascript">
-                const {itm.func.toString()}
+                const func = {itm.func.toString()}
               </code>
             </pre>
           </div>
