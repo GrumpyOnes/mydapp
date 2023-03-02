@@ -1,0 +1,121 @@
+<script>
+    const func = (str) =>{
+       const _str = str.split('').filter(i=>(i==='(' || i===')')).join('');
+       let _rightlen =0;
+       for(let i=0,len=_str.length;i<len;i++){
+        if(_str[i]===')'){
+            if(_rightlen<=0){
+                return false;
+            }else{
+                _rightlen--;
+            }
+        }else{
+            _rightlen ++;
+        }
+       }
+       return _rightlen===0?true:false;
+    }
+    //console.log(func('(dfdg)((gfg()))()'))
+
+    /**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    let ultiArr =[];
+
+    const round = (s)=>{
+
+        const arr=[];
+        for(let i=0,len = s.length;i<len;i++){
+            if(arr.includes(s[i])){
+                
+                const _subArr = round(s.substring(i-arr.length+arr.indexOf(s[i])+1));
+                if(arr.length>_subArr.length){
+                    return arr;
+                }
+
+                return _subArr;
+            }else{
+                arr.push(s[i]);
+            }
+            
+        }
+        return arr;
+
+    }
+    return myarr = round(s).join('');
+
+
+    
+    };
+    //console.log(lengthOfLongestSubstring('abcd'))
+
+    var convert = function(s, numRows) {
+        if(s.length<=numRows || numRows===1){
+            return s;
+        }
+        const vcount = numRows*2-2;//4 6
+        const _arrall = [];
+        for(let i=0;i<=numRows;i++){
+        let _arr=[];
+        for(let j=i;j<=s.length+1;j+=vcount){
+            _arr.push(s[j]); // i=2 
+            if(i!=0 && i!=numRows-1){
+                _arr.push(s[j + (numRows-i-1)*2]);
+            }
+            //j + (numRows-i-1)*2
+            // if(i!=0 && i!=numRows-1){
+            //     if(!!s.length >= j+(numRows-i-1)*2){
+            //     _arr.push(s[j+(numRows-i-1)*2])
+            //     }
+                
+            // }
+        }
+        _arrall.push(_arr);
+        }
+        const _b = _arrall.reduce((state,a)=>[...state,...a],[]);
+    return _b.join('')
+    };
+
+//console.log(convert("PAYPALISHIRING",3));
+var firstMissingPositive = function(nums) {
+    if(!nums.includes(1)){
+        return 1;
+    }
+ _nums.forEach((itm,idx)=>{//3 2
+    _nums[Math.abs(itm)-1] = -1*Math.abs(_nums[Math.abs(itm)-1]); 
+ })
+
+for(let i=0,len= _nums.length;i<len;i++){
+    if(_nums[i]>0){
+        return i+1;
+    }
+}
+ return nums.length+1;
+};
+var firstMissingPositive2 = function(nums) {
+    let target = 1;//3789  33-33
+    for(let i=0,len=nums.length;i<len;i++){
+        if(nums[i]>=1 && nums[i]<=len){
+            target = nums[i];
+            break;
+        }
+    }
+    const _nums = nums.map((itm,idx)=>((itm>nums.length || itm<=0)?target:itm)); 
+ _nums.forEach((itm,idx)=>{//3 2
+    _nums[Math.abs(itm)-1] = -1*Math.abs(_nums[Math.abs(itm)-1]); 
+ })
+
+for(let i=0,len= _nums.length;i<len;i++){
+    if(_nums[i]>0){
+        return i+1;
+    }
+}
+ return nums.length+1;
+};
+console.log(firstMissingPositive([7,8,9,11,12]))
+
+//[1,1,1] => [-1,1,1] idx=2+1 =3 2   
+
+</script>

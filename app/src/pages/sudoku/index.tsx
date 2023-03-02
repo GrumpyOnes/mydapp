@@ -1,8 +1,9 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useReducer } from "react";
 import { Button } from "antd";
 import solveSudoku from "./sudoku";
 import "./style.css";
+import "./style.less";
 
 const board: any = [
   ["5", "3", ".", ".", "7", ".", ".", ".", "."],
@@ -18,14 +19,21 @@ const board: any = [
 
 export default function index() {
   const [myBoard, setMyBoard] = useState<string[][]>(board);
+  const [data, dispatch] = useReducer(
+    (state: number, action: number) => state + action,
+    6
+  );
+
   const solve = useCallback(() => {
+    dispatch(4);
     setMyBoard([...solveSudoku(board)]);
-  }, [setMyBoard]);
+  }, [setMyBoard, dispatch]);
   return (
     <div>
       <Button onClick={solve}>Answer！！</Button>
+      {data}
       {myBoard.map((itmarr: string[], idxarr: number) => (
-        <div key={`row${idxarr}`}>
+        <div className="card" key={`row${idxarr}`}>
           {itmarr.map((itm: string, idx: number) => (
             <span className="box" key={`col${idxarr}${idx}`}>
               {itm}

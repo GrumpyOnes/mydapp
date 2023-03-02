@@ -1,0 +1,51 @@
+<script>
+    var fixArr = (arr)=>{
+    while(arr[0]===0){
+        arr.shift();
+    }
+    while(arr[arr.length-1]===0){
+        arr.pop()
+    }
+    return arr;
+}
+//找到最左和最右的值 并比较 取得较小的一个
+var getMin = (arr)=>{
+    return arr[0]<arr[arr.length-1]?arr[0]:arr[arr.length-1];
+}
+var getNewArr=(arr,min)=>{
+    let supplement=0;
+    arr.forEach((itm,idx)=>{
+        const _x = min-itm;
+        const _y = _x>0?_x:0;
+        supplement+=_y;
+
+    })
+    let newArr = arr.map((itm,idx)=>{
+        const _x = itm-min;
+        return _x>0?_x:0
+    })
+return {newArr,supplement}
+}
+
+var trap = function(height) {
+var pool=0;
+const func = (arr)=>{
+    var _arr = fixArr(arr);
+    var min = getMin(_arr);
+    const {newArr,supplement} = getNewArr(_arr,min);
+    pool+=supplement;
+    if(newArr.length>=3){
+        func(newArr);
+    }else{
+        return;
+    }
+}
+
+func(height)
+return pool;
+};
+console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+
+
+</script>
+

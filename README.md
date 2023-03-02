@@ -49,3 +49,10 @@ yarn add @ethersproject/abstract-provider
 ```
 
 nonce to high。 重置 metamask
+
+5.安装prism 语法高亮 https://maqib.cn/blog/prism-react-renderer
+```
+yarn add prismjs
+
+yarn add --dev babel-plugin-prismjs
+```

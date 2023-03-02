@@ -23,6 +23,7 @@
     "import/no-unresolved": 0,
     "import/extensions": 0,
     "react/function-component-definition": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "spaced-comment": 0
   }
 }

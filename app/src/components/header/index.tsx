@@ -39,6 +39,14 @@ const navigator: MenuProps["items"] = [
     ),
     key: "chain",
   },
+  {
+    label: (
+      <div>
+        <Link to="/algorithm">ALGORITHM</Link>
+      </div>
+    ),
+    key: "algorithm",
+  },
 ];
 
 const Head: React.FC<any> = () => {
