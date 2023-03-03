@@ -19,6 +19,23 @@ const trap = (height) => {
   }
   return ans;
 };
+const trap2 = (heights) => {
+  const leng = heights.length;
+  const maxleft = new Array(leng).fill(0);
+  const maxRight = new Array(leng).fill(0);
+  const diff = new Array(leng).fill(0);
+  for (let i = 1; i < leng; i++) {
+    maxleft[i] = Math.max(maxleft[i - 1], heights[i - 1]);
+  }
+  for (let i = leng - 2; i >= 0; i--) {
+    maxRight[i] = Math.max(maxRight[i + 1], heights[i + 1]);
+  }
+  for (let i = 0; i < leng; i++) {
+    const _diff = Math.min(maxleft[i], maxRight[i]) - heights[i];
+    diff[i] = _diff > 0 ? _diff : 0;
+  }
+  return diff.reduce((st, itm) => st + itm, 0);
+};
 
 export default {
   title: "接雨水",
