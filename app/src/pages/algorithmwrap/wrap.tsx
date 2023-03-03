@@ -22,11 +22,11 @@ export default function minInteger() {
   const ref = useRef<any>("");
   useEffect(() => {
     if (ref && ref.current) {
-      Array.from(ref.current.getElementsByClassName("prism-code-fix")).forEach(
-        (item: any) => {
-          Prism.highlightElement(item);
-        }
-      );
+      Array.from(
+        ref.current?.getElementsByClassName("prism-code-fix")
+      )?.forEach((item: any) => {
+        Prism.highlightElement(item);
+      });
     }
   }, [ref.current, name]);
   const [results, setResults] = useState<any[]>([]);
@@ -36,13 +36,11 @@ export default function minInteger() {
   }, [currentAlgos.funcs]);
   const inputChange = useCallback(
     (idx: number) => (values: any) => {
-      console.log(values.myarguments);
       const data = `[${values.myarguments}]`;
 
       try {
         // eslint-disable-next-line no-eval
         const _dt = eval(data);
-        console.log(_dt);
         const _result = currentAlgos.funcs[idx].func(..._dt);
         results[idx] = _result.toString();
         setResults([...results]);
@@ -67,10 +65,10 @@ export default function minInteger() {
             }}
           >
             <Form.Item name="myarguments" label="测试">
-              <Input placeholder="输入参数，逗号分割" />
+              <Input role="textbox" placeholder="输入参数，逗号分割" />
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button role="button" type="primary" htmlType="submit">
                 Submit
               </Button>
             </Form.Item>

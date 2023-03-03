@@ -1,8 +1,6 @@
 import React, { memo, Suspense } from "react";
-
 import { BrowserRouter as Router } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
-
 import {
   LaptopOutlined,
   NotificationOutlined,
@@ -14,28 +12,6 @@ import routes from "./routes";
 import MyHeader from "./components/header";
 
 const { Header, Content, Footer, Sider } = Layout;
-
-const items2: MenuProps["items"] = [
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-].map((icon, index) => {
-  const key = String(index + 1);
-
-  return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
-
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey = index * 4 + j + 1;
-      return {
-        key: subKey,
-        label: `option${subKey}`,
-      };
-    }),
-  };
-});
 
 const App: React.FC = () => {
   const {

@@ -50,9 +50,20 @@ yarn add @ethersproject/abstract-provider
 
 nonce to high。 重置 metamask
 
-5.安装prism 语法高亮 https://maqib.cn/blog/prism-react-renderer
+5.安装 prism 语法高亮 https://maqib.cn/blog/prism-react-renderer
+
 ```
 yarn add prismjs
 
 yarn add --dev babel-plugin-prismjs
+```
+
+5.增加 jest 测试 使用 react-testing-library +jest
+
+```
+参考https://www.bilibili.com/video/BV1q3411H7QZ/?spm_id_from=333.337.search-card.all.click&vd_source=e0bbfc8b01ba72da4777bdf82ed0835a
+https://www.cnblogs.com/testopsfeng/p/14265218.html
+https://blog.51cto.com/u_15098004/2611169
+
+act()
 ```

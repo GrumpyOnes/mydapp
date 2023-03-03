@@ -25,7 +25,7 @@ const navigator: MenuProps["items"] = [
   },
   {
     label: (
-      <div>
+      <div role="link">
         <Link to="/game">GAME</Link>
       </div>
     ),
@@ -33,7 +33,7 @@ const navigator: MenuProps["items"] = [
   },
   {
     label: (
-      <div>
+      <div role="link">
         <Link to="/chain">CHAIN</Link>
       </div>
     ),
