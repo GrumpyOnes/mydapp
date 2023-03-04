@@ -19,7 +19,7 @@ export default function App() {
     [histroyAnswer, setSucceed, setHistroyAnswer, correctWord]
   );
   return (
-    <div className="App">
+    <div className="wordle">
       <div className="wrap">
         {histroyAnswer.map((itm: string, idx: number) => (
           // eslint-disable-next-line react/no-array-index-key

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState, useContext } from "react";
 import { ethers } from "ethers";
 import { Button, Divider } from "antd";
-import { EthersContext } from "./index";
+import { EthersContext } from "./EthersContext";
 
 export default function linkMetamask() {
   const { ethersProvider, setEthersAccount, ethersAccount } =

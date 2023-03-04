@@ -67,3 +67,19 @@ https://blog.51cto.com/u_15098004/2611169
 
 act()
 ```
+
+6.安装 craco
+
+```
+参考https://xie.infoq.cn/article/2cb2a9a8b9e0f812ed02f6ec4
+https://blog.csdn.net/weixin_39628498/article/details/112291955
+yarn add @craco/craco -D
+yarn add craco-less -D
+配置splitChunks
+yarn add babel-plugin-import -D  按需引入
+yarn add hard-source-webpack-plugin -D 构建速度优化 //版本问题不可用
+yarn add webpackbar -D
+yarn add circular-dependency-plugin -D
+
+env NODE_ENV=production //此时报错 https://github.com/DocSpring/craco-less/issues/30
+```

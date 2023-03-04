@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { ethers, Contract, providers } from "ethers";
 import { Button, Divider } from "antd";
-import { EthersContext } from "./index";
+import { EthersContext } from "./EthersContext";
 
 export default function erc20reading() {
   const { ethersProvider, ethersAccount, erc20, erc20Address } =

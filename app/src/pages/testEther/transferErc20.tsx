@@ -5,7 +5,7 @@ import {
   TransactionResponse,
 } from "@ethersproject/abstract-provider";
 import { parseEther } from "ethers/lib/utils";
-import { EthersContext } from "./index";
+import { EthersContext } from "./EthersContext";
 
 const App: React.FC = () => {
   const { erc20Signed, ethersProvider } = useContext<any>(EthersContext);
