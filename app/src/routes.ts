@@ -7,6 +7,8 @@ const GamesPage = React.lazy(() => import("./pages/games"));
 const SudokuPage = React.lazy(() => import("./pages/sudoku"));
 const Algorithm = React.lazy(() => import("./pages/algorithm"));
 const AlgorithmWrap = React.lazy(() => import("./pages/algorithmwrap"));
+const TechdemoPage = React.lazy(() => import("./pages/techdemo"));
+const ReduxToolkit = React.lazy(() => import("./pages/techdemo/reduxtoolkit"));
 const routes = [
   {
     path: "/",
@@ -44,6 +46,16 @@ const routes = [
       {
         path: "/algorithm/:name",
         component: AlgorithmWrap,
+      },
+    ],
+  },
+  {
+    path: "/techdemo",
+    component: TechdemoPage,
+    routes: [
+      {
+        path: "/techdemo/reduxtoolkit",
+        component: ReduxToolkit,
       },
     ],
   },

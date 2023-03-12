@@ -33,8 +33,8 @@ module.exports = {
   // ...
   webpack: {
     alias: {
-      "@": pathResolve("."),
-      src: pathResolve("src"),
+      "@": pathResolve("src"),
+      components: pathResolve("src/components"),
     },
     plugins: [
       new WebpackBar({ profile: true }),

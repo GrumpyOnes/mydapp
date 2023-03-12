@@ -83,3 +83,12 @@ yarn add circular-dependency-plugin -D
 
 env NODE_ENV=production //此时报错 https://github.com/DocSpring/craco-less/issues/30
 ```
+
+7.安装 redux-toolkit
+
+```
+yarn add @reduxjs/toolkit react-redux
+// 安装 redux 开发工具 redux-devtools
+yarn add redux-devtools -D
+//chrome安装 redux-devtools
+``` 
